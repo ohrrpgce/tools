@@ -53,7 +53,7 @@ class Tabulator:
         """Log one or more occurrences of a field.
         'thing' is either number of occurrences, or the thing (convertable to string) to log,
         and optionally 'context' is where it occurred."""
-        if context is 'default':
+        if context == 'default':
             context = self.context
         self.fields[fieldid].add(thing, context)
 

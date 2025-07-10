@@ -50,6 +50,7 @@ print(len(palettes), "unique master palettes (in MAS)")
 
 # Same for fonts
 fnthashes, indices, iindices = np.unique([fnt[i:i+1].md5() for i in range(len(fnt))], return_index = True, return_inverse = True)
+#fnthashes, indices, iindices = np.unique([hash(fnt[i]['characters']['bitmaps'][0:32].data.tobytes()) for i in range(len(fnt))], return_index = True, return_inverse = True)
 fonts = [[0, fnt[i]] for i in indices]
 for i in iindices:
     fonts[i][0] += 1

@@ -4,7 +4,11 @@ import numpy as np
 from nohrio.ohrrpgce import *
 from nohrio.rpg2 import RPG, CorruptionError
 #from nohrio.ohrstring import *
-import zipfile
+try:
+    # Support .zips with PPMd compression (monkey-patches z)
+    import zipfile_ppmd as zipfile
+except ImportError:
+    import zipfile
 from tempfile import mkdtemp
 from weakref import proxy
 import shutil
